@@ -20,7 +20,7 @@ const article = ({article}) => {
 }
 
 /*with getServerSideProps, every time the user clicks an article on the main page, a new fetch is made and the page is made live. 
-must understand if that is better for a very dynamic DB
+must understand if that is better for a very dynamic DB*/
 export const getServerSideProps = async (context) => {
     const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${context.params.id}`)
     const article = await res.json()
@@ -31,7 +31,7 @@ export const getServerSideProps = async (context) => {
         }
     }
 }
-*/
+
 
 export const getStaticProps = async (context) => {
     const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${context.params.id}`)
